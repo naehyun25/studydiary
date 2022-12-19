@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mediaquery1</title>
+    <style>
+        #wrap{width: 100%;}
+        .inner{max-width:1440px; width:100%; margin:0 auto;}
+        #inner:after{
+            content: '';
+            display: block;
+            clear:both;
+        }
+        .title{/* width:30%: *//* max-width: 250px; */  background-color: rgb(230, 150, 52); float:left;}
+        .sub{/* width:50%; *//* max-width:500px; */ background-color: rgb(211, 150, 75); float:right;}
+        @media screen and (max-width:1440px){
+            body{background-color: lightgoldenrodyellow};
+        }
+        @media screen and (max-width:1024px) and (min-width:960px){
+            body{background-color: lightcoral;}
+        }
+        /* @media(max-width:960px){
+            .title{width: 300px;}
+            .sub{width: 500px;}
+        } */
+       /* 미디어쿼리 안쓰고 float 속성으로 너비가 좁아지면 밑으로 떨어지게 할 수 있다. *가로스크롤바가 안생기려면max-width처리  */
+            
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <h1>미디어쿼리</h1>
+        <div class="inner">
+            <div class="title">
+                <p>🐥서로 다른 매체유형에 따라 각각 다른 스타일을 줄수 있다.
+                    <span>**웹에서는 화면 크기에 따른 각각의 속성 값을 지정하여, 여러가지 화면을 구성하는 기술**을 말합니다.</span>
+                    <span>🐣 **@media** : 미디어쿼리가 시작됨을 선언함</span>
+                </p>
+            </div>
+            <div class="sub">
+                <div class="sub1">
+                    <p>🐣 **only / not** : 기본값:only ↔ not(해당조건문이 아닌 경우)  **생략가능**
+                       <span>`not`  연산자를 사용하여 전체 미디어 쿼리를 부정할 수 있습니다.</span>
+                       <span>ex.  스크린이 가로방향일 경우 color blue 라고 선언하고 not을 붙이면 스크린이 세로방향일때 blue가 된다.</span>
+                    </p>
+                </div>
+                <div class="sub2">
+                    <p>
+                        🐣  **매체유형** : all : 미디어 쿼리를 해석해야 할 대상을 나타냅니다. **생략가능**
+                        <span>print / screen - 생략되어있을 경우 all 로 적용된다.</span>
+                    </p>
+                </div>
+                <div class="sub3">
+                    <p>🐣 **조건문 :** and (조건문) -해당 조건문을 적용한 경우 스타일을 적용한다.
+                        <span>and (조건문A) and (조건문B)  - A and B 를 모두 만족해야 스타일을 적용한다.</span>
+                        <span>and (조건문A), and (조건문B)  - A or B 둘 중 하나를 만족하면 스타일을 적용한다.</span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

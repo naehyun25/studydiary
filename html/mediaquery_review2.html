@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>mediaquery2</title>
+    <style>
+        /* 1400부터 1200까지는 3단락으로 */
+        /* 1200부터 960까지는 2단락으로 */
+        /* 960부터 480까지는 1단락으로 */
+        #wrap{width:100%; max-width: 1200px;margin:0 auto;}
+        #header{margin:0 auto; line-height: 40px; background-color: lightblue;}
+        #container:after{content:''; display: block; clear:both;}
+
+        #aside{width:260px; float:left; background-color: lightcoral;}
+        #content{width:760px; margin:0 20px; float:left; background-color: coral;}
+
+        #quick{width: 140px; float:right; background-color: yellowgreen;}
+
+        #footer{max-width:1400px; margin:30px auto 0px; line-height: 30px; background-color: lightcyan;}
+        @media screen and (max-width: 1400px) and (min-width:1201px) {
+            
+        }
+        @media screen and (max-width:1200px) and (min-width:961px){
+            #content{width:63%;}
+            #aside{width:21%}
+            #quick{width:12%; float:left}
+        }
+        @media screen and (max-width:960px) and (min-width:480px){
+            #content{width:100%; margin:0}
+            #aside{width:100%}
+            #quick{width:100%;}
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header id="header">
+            <h1>Layout example</h1>
+        </header>
+        <div id="container">
+            <aside id="aside">
+                <h1>Aside area</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam, rerum culpa labore repudiandae deserunt nisi quasi ratione asperiores corporis itaque.</p>
+            </aside>	
+            <section id="content">
+                <h1>Content area</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo, dolores, iste, expedita necessitatibus dolor quos facere beatae voluptas deserunt eum commodi quisquam aperiam itaque quae labore error suscipit consequuntur magni incidunt accusantium rerum nisi explicabo illum! Eveniet, dignissimos, atque, vel voluptas voluptatem minima ipsum tenetur laboriosam quas recusandae animi illum iure cumque deleniti optio quod veniam excepturi architecto doloremque dolorum pariatur aspernatur rerum quia? Delectus, nesciunt quis vero ab modi necessitatibus atque sint nobis! Neque, temporibus, quibusdam maxime consequuntur animi alias rerum doloremque porro id provident itaque eius vel fuga repellendus odit sit veniam atque vero inventore ex? Est, quis.</p>
+            </section>
+            <aside id="quick">
+                <h1>Quick Navigation</h1>
+                <ul class="nav">
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </aside>	
+        </div>
+        <footer id="footer">
+            <p>Copyright &copy; 2014</p>
+        </footer>	
+    </div>
+</body>
+</html>
