@@ -1,0 +1,144 @@
+@charset "utf-8";
+#size{/* form요소의 기본디자인을 없애준다. */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+#size{
+    border:none;
+    width: 200px;
+    height: 50px;
+    padding:0.8em 1em;
+    font-size: 16px;
+    margin-left:20px;
+    border:1px solid rgb(156, 154, 154);
+    border-radius: 20px;
+    color:yellowgreen;
+    border-image: linear-gradient(yellow, green)5;
+    background: url(../check.svg) no-repeat 90% center;
+    background-size: 14%;
+}/* border-image 주면 border-radius 안먹힌다. */
+
+#check{
+    font-size:1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+
+#radio{
+    font-size: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    vertical-align: middle;
+}
+/* 기존 input의 체크박스는 변형이 불가해서 안보이게처리하고
+가상의 체크박스를 만들어서 label과 연결해준다.*/
+.d_check{margin:20px 30px;}
+#d_check+label{
+    position: relative;
+}
+#d_check+label:before{
+    content:'';
+    position:absolute;
+    width:1.5em;
+    height:1.5em;
+    background: linear-gradient(yellow 50%, green 50%);
+    border-radius: 50%;
+    left:-1.8em;
+}
+#d_check{display:none;}
+#d_check+label:after{
+    content:'🚩';
+    position:absolute;
+    font-size: 1.5em;
+    width:1.5em;
+    height:1.5em;
+    top:-0.2em;
+    left:-1.2em;
+    visibility: hidden;
+    transform: scale(0);
+    transition: all 0.5s linear;
+}
+#d_check:checked +label:after{visibility:visible; transform: scale(1);}
+
+/* div toggle에 포지션주고 label에 before와 after로 bar와 동그라미를 만든다. 
+input은 없애고, label은 텍스트를 날려준다. 
+label영역으로 input: check시 동그라미가 움직인다. */
+
+
+/* .toggle{
+    position:relative;
+    display: inline-block;
+} */
+/* .toggle input{display: none;} 일단 안보이게 숨기고 -영역도 없이
+.toggle label{
+    display: block; 
+    width: 48px;
+    height: 24px;
+    text-indent: -280%;
+    user-select: none;사용자가 label 선택못하도록 막는거
+}라벨에 before,after로 체크박스디자인을 만들어내고 기능을 준다. check호버등
+.toggle label:before,
+.toggle label:after{
+    content: '';
+    display: block;
+    position: absolute;
+    cursor: pointer;
+}이건 2개의 공통사항
+.toggle label:before{
+    배경
+        width: 100%;
+        height: 100%;위치 옮기지 않는한 부모를 벗어날 수 없다.
+        background-color: #dedede; 위에서 text-indent 줘서 label을 멀리 보내버려서 너비가 다 차지하게 되니까 그 부모인 토글에 인라인 블럭을주면 그안에서 갇힌다.
+        border-radius: 1em;
+        transition: background-color 0.25s ease;
+}
+.toggle label:after{움직이는 동그라미
+    top:0;
+    left:0;
+    width: 24px;
+    height: 24px;
+    background-color: #fff;;
+    box-shadow:0 0 4px rgba(0,0,0,.45);
+    border-radius: 50%;
+    transition: left 0.25s ease;
+}
+.toggle input:checked+label:before{background-color: blue;}
+.toggle input:checked+label:after{left:24px;}
+
+위에서는 label에 pr 줬고 여기서는 큰div(toggle)에 pr을 줬다. */
+
+
+/* 아니면
+라벨자체에 폰트를 없애고 bar로 이용하는방법 */
+.toggle{
+    display:inline-block;
+}
+#toggle{display: none;}
+#toggle+label{
+    font-size:0;
+    border: 2px solid rgb(150, 148, 148);
+    display: block;
+    width: 60px;
+    height:28px;
+    border-radius: 1rem;
+    position:relative;
+    box-sizing: border-box;
+}
+#toggle+label::before{
+    content: '';
+    position: absolute;
+    width: 26px;
+    height: 26px;
+    background-color: rgb(145, 135, 135);
+    border-radius: 50%;
+    left:-0.1px;
+    top:-0.8px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 5px rgb(62,65,82);
+}
+#toggle:checked+label::before{left:32px;}
+#toggle:checked+label{background-color: rgb(62, 65, 82);}
+
+
