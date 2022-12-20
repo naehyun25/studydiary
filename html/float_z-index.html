@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>float은 z-index가 안된다</title>
+    <style>
+        /* position 속성의 relative와absolute,fixed에서 가능하다. */
+        .cover{background-color: linen;}
+        .box1{width: 30px; height:30px; background-color: rgb(231, 202, 173);}
+        .box2{width: 30px; height:30px; background-color: rgba(35, 17, 100, 0.281);}
+        .box3{width: 30px; height:30px; background-color: rgb(21, 148, 85);}
+        .box4{width: 30px; height:30px; background-color: rgb(236, 121, 6);}
+        .fl{float: left;}
+        .fr{float:right;}
+        .cb{clear:both;}
+        .cover{overflow: hidden;}
+        .box2{transform: translateX(30px);}
+        .box3{z-index: 15;}
+    </style>
+</head>
+<body>
+    <div class="cover">
+        <div class="box1 fl">1</div>
+        <div class="box2 fl">2</div>
+        <div class="box3 fl">3</div>
+        <div class="box4 fl">4</div>
+    </div>
+</body>
+</html>
