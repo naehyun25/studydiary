@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/form_css_review02.css">
+</head>
+<body>
+    <form action="#">
+        <fieldset class="selectbox">
+            <legend class="blind">색상을 선택하세요</legend>
+            <label for="select1">옵션</label>
+            <select name="select1" id="select1">
+                <option selected>색상</option>
+                <option>빨강</option>
+                <option>초록</option>
+                <option>노랑</option>
+            </select>
+        </fieldset>
+    </form>
+    <script src="https://code.jquery.com/jquery-3.6.2.min.js"></script><!-- 제이쿼리 라이브러리 임포트 -->
+    <script>
+        $(function(){
+            /* 변수선언 *//* 변수에 html 요소를 할당했음 */
+            var selectTarget=$('.selectbox select')
+            selectTarget.change(function(){
+                var selectOPT=$(this).children('option:selected').text();
+            // console.log(selectOPT);
+            $(this).siblings('label').text(selectOPT)
+            })
+        })
+            /* 위에서 변수로 지정한 selectTarget 이 .change 바뀌면  */  /* option의 약자로 opt *//* this는 이것 현재 this는 select이다. */
+            // 태그는 문자열로 취급해서 따옴표 안에 넣는다.
+    </script>
+</body>
+</html>
