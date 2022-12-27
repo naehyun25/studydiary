@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>find, eq</title>
+    <style>
+        .last{
+            background: #900;
+          }
+    </style>
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <script>
+        //.find( selector:하위요소에서 탐색 )
+        //.eq( index:인덱스번호 요소선택 )
+        //.fillter(selecto,function,elements,selection:find에서 조건에맞는 걸 고름)
+        //.end()이전의요소를 선택함
+    $(function(){
+        // $("body").find("#list").css("background-color","blue")
+        // $("#list").find(">li").css("border-bottom","1px solid").filter(":last").css("background-color","grey").end().filter(":nth-child(3)").css("background-color","blue").end().
+       $("#list").find(">li").css("border-bottom","1px dashed").find(">ul>li").css("background-color","blue").find("ul").css("border-bottom","1px solid").end().filter(":nth-child(3)").css("background-color","green").end().css("border-bottom","10px solid red")
+    });
+
+
+
+
+
+    </script>
+</head>
+<body>
+    <ul id="list">
+        <li>1depth</li>
+        <li>
+            <ul>
+                <li>2depth
+                    <ul>
+                        <li>3depth</li>
+                        <li>bbbb</li>
+                        <li>bbbb</li>
+                    </ul>
+                </li>
+                <li>bbbb</li>
+                <li>bbbb</li>
+            </ul>
+        </li>
+        <li>ccccc
+            <ul>
+                <li>bbbb</li>
+                <li>bbbb</li>
+                <li>bbbb</li>
+            </ul>
+        </li>
+        <li>ccccc</li>
+    </ul>
+</body>
+</html>
