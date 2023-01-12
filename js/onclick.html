@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick방법</title>
+</head>
+<body>
+    <button id="change">글자색</button>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Dolor, laboriosam, adipisci omnis modi perspiciatis iure veritatis praesentium amet, optio dolorum delectus! Eveniet architecto ullam animi. Ipsam earum culpa nihil ea?</p>
+    <ul>
+        <li><a href="#" onclick="changebg('red')">blue</a></li>
+        <li><a href="#" onclick="changebg('green')">green</a></li>
+        <li><a href="#" onclick="changebg('pink')">pink</a></li>
+        <li><a href="#" onclick="changebg('yellow')">yellow</a></li>
+    </ul>
+    <script>
+        function changebg(color){
+            document.querySelector("p").style.color="red"
+        }
+        
+    </script>
+
+
+    <!-- <script>
+        function changebg(color){
+            var result=document.querySelector("p")
+            result.style.backgroundColor=color;
+        }
+    </script> -->
+</body>
+</html>
