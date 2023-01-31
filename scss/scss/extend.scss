@@ -1,0 +1,67 @@
+$red : red;
+$black : #ffffff;
+$blue : blue;
+$px10 : 10px;
+
+@mixin bgcolorFontsize($bgcolor,$Fontsize){
+  background-color: $bgcolor;
+  font-size: $Fontsize;
+}
+
+html {
+  font-size: 18px;
+}
+
+body {
+  margin: 20px;
+  background-color: #fff4c1;
+}
+
+div {
+  color: #333;
+  padding: 20px;
+}
+
+a {
+  display: inline-block;
+  margin: 10px 0;
+}
+
+%box{
+    border-radius : 40px;
+    border : 5px solid black;
+    -webkit-box-shadow: 0px 3px 20px 0px rgba(100, 0, 0, 0.75);
+    box-shadow: 0px 3px 20px 0px rgba(100, 0, 0, 0.75);
+}
+
+#box1{
+  &{
+    @include bgcolorFontsize($blue,calc($px10*4));
+    @extend %box;
+  }
+  &-title{
+    color:$red;
+    }
+  & > a {
+    color: #a22;
+    text-decoration: none;
+    &:hover {
+      background-color: #ccc;
+    }
+  }
+    & #box2 {
+      &{
+        font-size: 20px;
+      background-color: #e9e9e9;
+      @extend %box;
+      }
+      & > a {
+        color: #ee6633;
+        text-decoration: none;
+        &:hover {
+          color: #a22;
+          text-decoration: none;
+        }       
+      }
+    }
+  }

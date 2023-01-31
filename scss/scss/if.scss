@@ -1,0 +1,32 @@
+#boxtotal{
+    background-color: wheat;
+}
+$px100 : 100px;
+@mixin sizeColor($big,$color){
+    width : $big;
+    height : $big;
+    background-color : $color;
+    }
+@mixin theme($mood){
+    @if $mood == "light"{
+        @include sizeColor($px100,wheat);
+        }
+    @else if $mood == "dark"{
+        @include sizeColor($px100,lightgray);
+         } 
+    @else {
+        @include sizeColor(calc($px100*2),coral);
+         }  
+    }
+.box1{
+    margin:0 auto;
+    @include theme("light");
+}
+.box2{
+    margin:0 auto;
+    @include theme("dark");
+}
+.box3{
+    margin:0 auto;
+    @include theme("")
+}
