@@ -1,0 +1,17 @@
+오픈 API 이용방법
+문화공공데이터 광장에서 제공하는 오픈API를 소프트웨어 개발자나 사용자들이 보다 쉽게 이용할 수 있도록
+별도 확인 절차 없이 간단한 정보 입력만으로 자동 승인되어 URL기반의 API가 호출됩니다.
+누구나 원하는 데이터를 손쉽게 받아 서비스 개발에 활용하실 수 있도록 제공합니다.
+
+오픈API URL 조합 예시
+요청URL + Service Key + 검색조건 값(파라미터)
+예)http://api.kcisa.kr/openapi/service/rest/meta16/getkopis01?serviceKey={서비스 키}&numOfRows=10&pageNo=1
+
+url : http://api.kcisa.kr/API_CNV_053/request
+key : 6c65f8a2-c3bc-466f-a86d-b83929134f47
+검색조건 :
+
+http://api.kcisa.kr/API_CNV_053/request?serviceKey={6c65f8a2-c3bc-466f-a86d-b83929134f47&numOfRows=10&pageNo=1
+
+url : "http://api.kcisa.kr/API_CNV_053/request?serviceKey=(6c65f8a2-c3bc-466f-a86d-b83929134f47)&numOfRows=10&pageNo=1",
+            dataType : "xml",
