@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>api test</title>
+</head>
+<body>
+    <div class="wrap">
+<!-- php파일로 도전 -->
+    </div>
+    <!--key :  a31fe329cd40468e8b664b205d26e7ff -->
+    <script src='https://code.jquery.com/jquery-1.12.0.min.js'></script>
+    <!-- <script src="http://www.kopis.or.kr/openApi/restful/pblprfr?service={a31fe329cd40468e8b664b205d26e7ff}&stdate=20220101&eddate=20220131&rows=10&cpage=1"></script> -->
+    <script>
+var xhr = new XMLHttpRequest();
+var url = 'api_2.php'; /*URL*/
+// var queryParams = '?' + encodeURIComponent('service') + '=' + 'a31fe329cd40468e8b664b205d26e7ff'; /*서비스키*/
+// queryParams += '&' + encodeURIComponent('stdate') + '=' + encodeURIComponent('20220101'); /*stdate*/
+// queryParams += '&' + encodeURIComponent('eddate') + '=' + encodeURIComponent('20220601'); /*eddate*/
+// queryParams += '&' + encodeURIComponent('cpage') + '=' + encodeURIComponent('1'); /*page*/
+// queryParams += '&' + encodeURIComponent('rows') + '=' + encodeURIComponent('10'); /*row*/
+
+xhr.open('GET', url);
+xhr.onreadystatechange = function () {
+if (this.readyState == 4) {
+console.log(this.responseText)
+// console.log('status: ' + this.status);
+// console.log('resultCode: ' + $(this.responseText).find('resultCode').text());
+// console.log('resultMsg: ' + $(this.responseText).find('resultMsg').text());
+
+// var item = $(this.responseText).find('item');
+// console.log(item)
+// $(item).each(function(){
+
+// console.log("title" + $(this).find("title").text());
+// console.log("description" + $(this).find("description").text());
+// console.log("viewCount" + $(this).find("viewCount").text());
+// console.log("url" + $(this).find("url").text());
+// console.log("imageObject" + $(this).find("imageObject").text());
+// console.log("localId" + $(this).find("localId").text());
+// console.log("sourceTitle" + $(this).find("sourceTitle").text());
+// console.log("eventSite" + $(this).find("eventSite").text());
+// console.log("type" + $(this).find("type").text());
+// console.log("contactPoint" + $(this).find("contactPoint").text());
+// console.log("charge" + $(this).find("charge").text());
+// console.log("audience" + $(this).find("audience").text());
+// console.log("period" + $(this).find("period").text());
+
+// });
+
+};
+
+}
+xhr.send('');
+    </script>
+</body>
+</html>
